@@ -13,4 +13,11 @@ jobs:
       - name: Print greeting
         run: echo "Hello world"
       - name: Another task
-        run: echo "Amother task"
+        run: echo "Another task"    
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: List the files of the repo
+        run: |
+          echo "The repository ${{ github.repository }} contains the following files:"
+          tree
+
