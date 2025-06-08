@@ -10,7 +10,7 @@ jobs:
     runs-on: ${{ matrix.operating_system }}    
     steps:
       - name: Only for Windows
-        if: ${{ matrix.operating_system == 'windows_latest' }}	
+        if: ${{ matrix.operating_system == 'windows-latest' }}	
         run: echo "This should only run on Windows"
       - name: Common step for every O/S  
         run: echo "Common step"
