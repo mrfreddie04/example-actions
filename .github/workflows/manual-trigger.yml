@@ -16,5 +16,5 @@ jobs:
     steps:
       - name: Display the inputs
         run: |
-          echo "Label: ${{ github.inputs.text }}"
-          echo "Build type: ${{ github.inputs.build }}"
+          echo "Label: ${{ inputs.text }}"
+          echo "Build type: ${{ inputs.build }}"
