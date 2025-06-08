@@ -10,3 +10,11 @@ jobs:
         run: echo "MY_VALUE=Pedro" >> "$GITHUB_OUTPUT"
       - name: Get a variable
         run: echo "MY_VALUE=${{ steps['generate-value'].outputs['MY_VALUE'] }}"
+      - name: Mask a variable
+        id: masker
+        run: |
+          secret_value="12345"
+          echo "::add-mask::$secret_value"
+          echo "SECRET_VALUE=$secret_value" >> "$GITHUB_OUTPUT"
+      - name: Use the secret value 
+        run: echo "SECRET_VALUE=${{ steps.masker.outputs['SECRET_VALUE'] }}"          
