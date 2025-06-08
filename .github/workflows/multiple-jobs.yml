@@ -17,3 +17,9 @@ jobs:
     steps:
       - name: Print job's name
         run: echo "Job 3"        
+  job-4:
+    runs-on: ubuntu-latest
+    needs: [job-1,job-3]
+    steps:
+      - name: Print completion message
+        run: echo "Waited on Job-1 & Job-3. Job-4 completed"     
